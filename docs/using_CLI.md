@@ -19,10 +19,10 @@ For all DeepEthogram projects, we [expect a consistent file structure](file_stru
 ## examples
 To train the flow generator with the larger MotionNet architecture and a batch size of 16: 
 
-`deepethogram.flow_generator.train project.config_file=path/to/config/file.yaml flow_generator.arch=MotionNet compute.batch_size=16`
+`python -m deepethogram.flow_generator.train project.config_file=path/to/config/file.yaml flow_generator.arch=MotionNet compute.batch_size=16`
 
 To train the feature extractor with the ResNet18 base, without the curriculum training, with an initial learning rate of 1e-5: 
-`deepethogram.feature_extractor.train project.config_file=path/to/config/file.yaml feature_extractor.arch=resnet18 train.lr=1e-5 feature_extractor.curriculum=false notes=no_curriculum`
+`python -m deepethogram.feature_extractor.train project.config_file=path/to/config/file.yaml feature_extractor.arch=resnet18 train.lr=1e-5 feature_extractor.curriculum=false notes=no_curriculum`
 
 To train the flow generator with specific weights loaded from disk, with a specific train/test split, with the DEG_s preset (3D MotionNet): 
 `python -m deepethogram.flow_generator.train project.config_file=path/to/config/file.yaml reload.weights=path/to/flow/weights.pt split.file=path/to/split.yaml preset=deg_s`
